@@ -5,76 +5,162 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
   
+  <link rel="stylesheet" href="css/styles.css">
+
   <title>Frontend Mentor | Time tracking dashboard</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
-  Report for
-  Jeremy Robson
+  <div class="dashboard">
 
-  Daily
-  Weekly
-  Monthly
+    <div class="card card__main">
+      <div class="card__main-header">
+        <img src="images/image-jeremy.png" class="card__main-image" alt="image-jeremy">
+        <div class="card__main-title">
+          <span>Report for</span> 
+          <span class="card__main-name"> Jeremy Robson </span>
+        </div>
+      </div>
+      <div class="card__main-filters">
+        <p id="daily" class="card__filter">Daily</p>
+        <p id="weekly" class="card__filter active">Weekly</p>
+        <p id="monthly" class="card__filter">Monthly</p>
+      </div>
+    </div>
 
-  Work
-  5hrs <!-- daily -->
-  Previous - 7hrs <!-- daily -->
-  32hrs <!-- weekly -->
-  Previous - 36hrs <!-- weekly -->
-  103hrs <!-- monthly -->
-  Previous - 128hrs <!-- monthly -->
+    <div class="card card__tracking">
+      <div class="card__header card__header--work">
+        <img src="images/icon-work.svg" alt="icon-work">
+      </div>
+      <div class="card__content">
+        <div class="card__title">
+           Work
+        <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+          <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+        </svg>
+        </div>
+        <div class="card__info">
+          <div class="card__hours" id="work-hour">
+          </div>
+          <div class="card__last-hours" id="work-last-hour">
+          </div>
+        </div>
+        
+      </div>
+    </div>
 
-  Play
-  1hr <!-- daily -->
-  Previous - 2hrs <!-- daily -->
-  10hrs <!-- weekly -->
-  Previous - 8hrs <!-- weekly -->
-  23hrs <!-- monthly -->
-  Previous - 29hrs <!-- monthly -->
+    <div class="card card__tracking">
+      <div class="card__header card__header--play">
+        <img src="images/icon-play.svg" alt="icon-play">
+      </div>
+      <div class="card__content">
+        <div class="card__title">
+           Play
+        <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+          <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+        </svg>
+        </div>
+        <div class="card__info">
+          <div class="card__hours" id="play-hour">
+          </div>
+          <div class="card__last-hours" id="play-last-hour">
+          </div>
+        </div>
+      </div>
+    </div>
 
-  Study
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 7hrs <!-- weekly -->
-  13hrs <!-- monthly -->
-  Previous - 19hrs <!-- monthly -->
+    <div class="card card__tracking">
+      <div class="card__header card__header--study">
+        <img src="images/icon-study.svg" alt="icon-study">
+      </div>
+      <div class="card__content">
+        <div class="card__title">
+           Study
+          <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+          </svg>
+        </div>
+        <div class="card__info">
+          <div class="card__hours" id="study-hour">
+          </div>
+          <div class="card__last-hours" id="study-last-hour">
+          </div>
+        </div>
+      </div>
+    </div>
 
-  Exercise
-  1hr <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  4hrs <!-- weekly -->
-  Previous - 5hrs <!-- weekly -->
-  11hrs <!-- monthly -->
-  Previous - 18hrs <!-- monthly -->
+    <div class="card card__tracking">
+      <div class="card__header card__header--exercise">
+        <img src="images/icon-exercise.svg" alt="icon-exercise">
+      </div>
+      <div class="card__content">
+        <div class="card__title">
+           Exercise
+          <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+          </svg>
+        </div>
+        <div class="card__info">
+          <div class="card__hours" id="exercise-hour">
+          </div>
+          <div class="card__last-hours" id="exercise-last-hour">
+          </div>
+        </div>
+      </div>
+    </div>
 
-  Social
-  1hr <!-- daily -->
-  Previous - 3hrs <!-- daily -->
-  5hrs <!-- weekly -->
-  Previous - 10hrs <!-- weekly -->
-  21hrs <!-- monthly -->
-  Previous - 23hrs <!-- monthly -->
+    <div class="card card__tracking">
+      <div class="card__header card__header--social">
+        <img src="images/icon-social.svg" alt="icon-social">
+      </div>
+      <div class="card__content">
+        <div class="card__title">
+           Social
+          <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+          </svg>
+        </div>
+       <div class="card__info">
+          <div class="card__hours" id="social-hour">
+          </div>
+          <div class="card__last-hours" id="social-last-hour">
+          </div>
+        </div>
+      </div>
+    </div>
 
-  Self Care
-  0hrs <!-- daily -->
-  Previous - 1hr <!-- daily -->
-  2hrs <!-- weekly -->
-  Previous - 2hrs <!-- weekly -->
-  7hrs <!-- monthly -->
-  Previous - 11hrs <!-- monthly -->
-
+    <div class="card card__tracking">
+      <div class="card__header card__header--selfcare">
+        <img src="images/icon-self-care.svg" alt="icon-self-care">
+      </div>
+      <div class="card__content">
+        <div class="card__title">
+           Self Care
+           <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+          </svg>
+        </div>
+       <div class="card__info">
+          <div class="card__hours" id="selfcare-hour">
+          </div>
+          <div class="card__last-hours" id="selfcare-last-hour">
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Mariana Ongay Ortiz</a>.
   </div>
+
+  <script src="js/script.js"></script>
 </body>
 </html>

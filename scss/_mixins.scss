@@ -1,0 +1,29 @@
+@use 'variables' as v;
+@use 'sass:color';
+
+@mixin tablet {
+    @media (min-width: v.$tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: v.$desktop) {
+        @content;
+    }
+}
+
+@mixin posicionamiento-header{
+    transform: translateY(20px); 
+    z-index: 2;
+    position: relative;
+}
+
+@mixin posicionamiento-card{
+    transform: translateY(-35px); 
+    z-index: 2;
+    position: relative;
+
+   
+}
+
